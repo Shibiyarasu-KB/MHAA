@@ -4,10 +4,6 @@ import SearchBar from './components/SearchBar';
 import MemberCard from './components/MemberCard';
 import Footer from './components/Footer';
 import { Member } from './types';
-import { parseCSV } from './utils/csvParser';
-
-const EDGE_FUNCTION_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/fetch-members`;
-const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export default function App() {
   const [members, setMembers] = useState<Member[]>([]);
@@ -27,18 +23,13 @@ export default function App() {
       }
     }
 
-    fetch(EDGE_FUNCTION_URL, {
-      headers: {
-        Authorization: `Bearer ${ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch('/members.json')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load directory');
-        return res.text();
+        return res.json();
       })
-      .then((csvText) => {
-        const parsed = parseCSV(csvText);
+      .then((data: Member[]) => {
+        const parsed = data.filter((m) => m.serial && m.serial !== 'S.No');
         setMembers(parsed);
         sessionStorage.setItem('members_cache', JSON.stringify(parsed));
       })
@@ -55,8 +46,8 @@ export default function App() {
     if (!q) return [];
     return members.filter(
       (m) =>
-        m.name.toLowerCase().includes(q) ||
-        m.enrollmentNo.toLowerCase().includes(q)
+        (m.name || '').toLowerCase().includes(q) ||
+        (m.enrollmentNo || '').toLowerCase().includes(q)
     );
   }, [query, members]);
 
