@@ -23,7 +23,7 @@ export default function App() {
       }
     }
 
-    fetch('/members.json')
+    fetch('./members.json')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load directory');
         return res.json();

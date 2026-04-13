@@ -34,7 +34,7 @@ export default function MemberCard({ member, query }: MemberCardProps) {
       <div className="flex items-start gap-4 p-5">
         {member.image ? (
           <img
-            src={`/images/${member.image}`}
+            src={`./images/${member.image}`}
             alt={safeName}
             className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border border-gray-100 shadow-sm"
           />
