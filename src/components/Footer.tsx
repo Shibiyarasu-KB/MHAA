@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="flex items-center gap-3 mb-4 select-none">
           <img src="/logo1.jpg" alt="MHAA Logo" className="w-10 h-10 object-contain rounded-full border border-gray-100" />
           <div className="text-left">
-            <span className="block text-gray-900 font-black text-sm uppercase leading-tight">MHAA Directory</span>
-            <span className="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Official Portal</span>
+            <span className="block text-gray-900 font-black text-sm uppercase leading-tight">Right to Serve By P.Ramamoorthi</span>
+
           </div>
         </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
         </p>
 
         {/* Simple Back to Top */}
-        <button 
+        <button
           onClick={scrollToTop}
           className="group flex flex-col items-center gap-2 text-[10px] font-bold text-gray-400 hover:text-blue-600 transition-all uppercase tracking-[0.2em]"
         >

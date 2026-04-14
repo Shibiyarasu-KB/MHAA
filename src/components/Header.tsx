@@ -41,7 +41,7 @@ export default function Header({ query, onQueryChange, loading, onContactClick }
                 type="text"
                 value={query}
                 onChange={(e) => onQueryChange(e.target.value)}
-                placeholder="Search..."
+                placeholder="Find your enrolment number"
                 className="w-full pl-8 md:pl-9 pr-8 py-1.5 md:py-2 text-[10px] md:text-sm bg-gray-50 border border-transparent rounded-full focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all placeholder-gray-400 text-gray-800 font-medium"
                 autoComplete="off"
                 spellCheck={false}

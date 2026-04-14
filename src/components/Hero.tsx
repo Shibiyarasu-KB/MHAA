@@ -17,13 +17,18 @@ export default function Hero() {
       </div>
 
       {/* Name and Title - Stay centered */}
-      <div className="space-y-1 mb-8 animate-in fade-in slide-in-from-bottom-2 duration-700 px-4">
+      <div className="space-y-2 mb-8 animate-in fade-in slide-in-from-bottom-2 duration-700 px-4">
         <h1 className="text-2xl md:text-4xl font-black text-yellow-500 tracking-tight drop-shadow-sm uppercase leading-tight">
           P. RAMAMOORTHI
         </h1>
-        <h2 className="text-sm md:text-lg font-bold text-gray-800 tracking-wide">
-          Contestant for Junior EC Member
-        </h2>
+        <div className="flex flex-col gap-1">
+          <span className="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest">
+            Contestant for
+          </span>
+          <h2 className="text-sm md:text-lg font-bold text-gray-800 tracking-wide uppercase">
+            Junior EC Member
+          </h2>
+        </div>
       </div>
 
       {/* Stacked Layout Container */}
@@ -48,26 +53,29 @@ export default function Hero() {
             <p className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight leading-tight">
               Dear <span className="text-blue-600">Advocates</span>,
             </p>
-            
+
             <div className="text-gray-700 text-sm md:text-lg leading-relaxed font-medium space-y-4 max-w-2xl mx-auto">
               <p className="opacity-90">
-                Greetings from <strong className="text-blue-700 border-b-2 border-blue-100">Adv. P. Ramamoorthi</strong> (Madras High Court).
+                Greetings from <strong className="text-blue-700 border-b-2 border-blue-100">Advocate P. Ramamoorthi</strong> (Madras High Court).
               </p>
-              
+
               <p className="bg-white/60 py-4 px-6 rounded-2xl border border-white shadow-sm inline-block">
-                For the MHAA Election on <strong className="text-blue-900 underline decoration-yellow-400 decoration-2 underline-offset-4">29th April 2026</strong>, 
-                I humbly request your support for <strong className="text-gray-900">P. Ramamoorthi</strong>, contesting for <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm">Junior EC Member</span>.
+                For the MHAA Election on <strong className="text-blue-900 underline decoration-yellow-400 decoration-2 underline-offset-4">29th April 2026</strong>,
+                I humbly request your support for <strong className="text-gray-900">P. Ramamoorthi</strong>, contesting for:<br />
+                <span className="inline-block bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-md mt-3 whitespace-nowrap">
+                  Junior EC Member
+                </span>
               </p>
-              
+
               <p className="text-lg md:text-xl font-bold text-gray-900 tracking-wide underline decoration-blue-500/20 underline-offset-8">
                 Your kind support will be highly appreciated.
               </p>
             </div>
-            
+
             <div className="mt-8 pt-8 border-t border-gray-900/5 flex flex-col items-center gap-2">
               <div className="flex flex-col items-center">
                 <span className="text-[10px] text-gray-400 uppercase font-black tracking-[0.4em] italic mb-1">With Warm Regards,</span>
-                <span className="text-2xl md:text-3xl font-black text-blue-950 tracking-tighter">Adv. P. Ramamoorthi</span>
+                <span className="text-2xl md:text-3xl font-black text-blue-950 tracking-tighter">Advocate P. Ramamoorthi</span>
               </div>
             </div>
           </div>
