@@ -1,7 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { MessageSquare } from 'lucide-react';
 import Header from './components/Header';
-import SearchBar from './components/SearchBar';
 import MemberCard from './components/MemberCard';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
@@ -66,27 +64,25 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Header />
+      <Header 
+        query={query}
+        onQueryChange={handleQueryChange}
+        loading={loading}
+        onContactClick={() => setIsContactModalOpen(true)}
+      />
 
       <main className="flex-1">
-        <Hero />
+        {!showResults && <Hero />}
         
-        <SearchBar
-          value={query}
-          onChange={handleQueryChange}
-          resultCount={showResults ? results.length : null}
-          loading={loading}
-        />
+        {/* Results Info Section (Replaces SearchBar space) */}
+        {!showResults && !loading && members.length > 0 && (
+          <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col items-center justify-center text-center">
+            <p className="text-gray-500 text-xs font-semibold uppercase tracking-widest opacity-60">
+              MHAA Directory Search
+            </p>
+          </div>
+        )}
 
-        <div className="flex justify-center -mt-2 mb-6">
-          <button
-            onClick={() => setIsContactModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-full text-xs font-bold border border-gray-200 hover:border-blue-300 hover:text-blue-600 shadow-sm transition-all active:scale-95 group"
-          >
-            <MessageSquare className="w-3.5 h-3.5 text-blue-500 group-hover:scale-110 transition-transform" />
-            <span>Contact for queries</span>
-          </button>
-        </div>
 
         {error && (
           <div className="max-w-4xl mx-auto px-4 pb-6">
@@ -122,18 +118,6 @@ export default function App() {
           </section>
         )}
 
-        {!showResults && !loading && members.length > 0 && (
-          <div className="max-w-4xl mx-auto px-4 pb-10 flex flex-col items-center justify-center py-12 text-center">
-            <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-              <svg className="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-            <p className="text-gray-500 text-sm">
-              Search from <span className="font-semibold text-gray-700">{members.length.toLocaleString()}</span> members
-            </p>
-          </div>
-        )}
       </main>
 
       <Footer />

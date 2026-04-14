@@ -1,5 +1,5 @@
 
-import { Users, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -26,65 +26,51 @@ export default function Hero() {
         </h2>
       </div>
 
-      {/* Side-by-Side Layout Container - CONTROLLED HEIGHT */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-0 mb-12 px-4 lg:px-8">
-        
-        {/* Left Col: Campaign Poster - SLIGHTLY LARGER */}
-        <div className="lg:w-[35%] animate-in fade-in slide-in-from-left-8 duration-1000">
-          <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-            <img 
-              src="/poster.jpeg" 
-              alt="P. Ramamoorthi Campaign Poster" 
-              className="w-full h-auto max-h-[500px] block"
-            />
-          </div>
+      {/* Stacked Layout Container */}
+      <div className="max-w-4xl mx-auto px-4 mb-12 space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+
+        {/* Campaign Poster */}
+        <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <img
+            src="/poster1.jpeg"
+            alt="P. Ramamoorthi Campaign Poster"
+            className="w-full h-auto block"
+          />
         </div>
 
-        {/* Right Col: Message Box - ADJUSTED HEIGHT */}
-        <div className="lg:w-[65%] animate-in fade-in slide-in-from-right-8 duration-1000 bg-white rounded-2xl overflow-hidden shadow-2xl border-2 border-white ml-8 h-[500px]">
-          <div className="h-full relative overflow-y-auto custom-scrollbar">
-            <div className="p-6 md:p-8 text-left relative h-full flex flex-col items-start">
-              {/* Subtle accent line */}
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-yellow-500"></div>
+        {/* Premium Message Content */}
+        <div className="max-w-3xl mx-auto px-6 py-10 rounded-[2.5rem] bg-white/40 backdrop-blur-md border border-white/60 shadow-2xl shadow-blue-900/5 relative overflow-hidden group hover:bg-white/50 transition-colors duration-700">
+          {/* Subtle decoration */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-full -mr-16 -mt-16 blur-3xl transition-all group-hover:bg-yellow-400/10" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-400/5 rounded-full -ml-16 -mb-16 blur-3xl transition-all group-hover:bg-blue-400/10" />
+
+          <div className="relative z-10 text-center space-y-5">
+            <p className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight leading-tight">
+              Dear <span className="text-blue-600">Advocates</span>,
+            </p>
+            
+            <div className="text-gray-700 text-sm md:text-lg leading-relaxed font-medium space-y-4 max-w-2xl mx-auto">
+              <p className="opacity-90">
+                Greetings from <strong className="text-blue-700 border-b-2 border-blue-100">Adv. P. Ramamoorthi</strong> (Madras High Court).
+              </p>
               
-              <div className="space-y-4 text-gray-700 text-xs md:text-sm leading-relaxed font-medium max-w-2xl px-2">
-                <p className="text-xl md:text-2xl font-black text-gray-900 mb-4 tracking-tight">Dear Advocate,</p>
-                
-                <p>
-                  Greetings from <strong className="text-blue-700">Adv. P. Ramamoorthi</strong> (Madras High Court).
-                </p>
-                
-                <p className="py-3 px-4 bg-gray-50 rounded-xl border-l-4 border-blue-600 my-4 text-gray-600 italic shadow-sm">
-                  Madras High Court Advocates Association Election on <strong className="text-gray-900">29th April 2026</strong>.
-                </p>
-                
-                <p>
-                  I humbly request your valuable support by extending your valuable vote to 
-                  <strong className="text-gray-900 border-b-2 border-yellow-400 pb-0.5 ml-1">P. Ramamoorthi</strong>, 
-                  contesting for <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg font-bold">Junior EC Member</span>.
-                </p>
-                
-                <p className="pt-4 font-bold text-gray-900 text-base md:text-lg">
-                  Your kind support will be highly appreciated.
-                </p>
-                
-                <div className="pt-8 border-t border-gray-100 flex flex-col gap-1 mt-6">
-                  <span className="text-[11px] text-gray-400 uppercase font-black tracking-[0.2em] italic">Regards,</span>
-                  <span className="text-xl font-black text-blue-900 tracking-tight">Adv. P. Ramamoorthi</span>
-                </div>
+              <p className="bg-white/60 py-4 px-6 rounded-2xl border border-white shadow-sm inline-block">
+                For the MHAA Election on <strong className="text-blue-900 underline decoration-yellow-400 decoration-2 underline-offset-4">29th April 2026</strong>, 
+                I humbly request your support for <strong className="text-gray-900">P. Ramamoorthi</strong>, contesting for <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm">Junior EC Member</span>.
+              </p>
+              
+              <p className="text-lg md:text-xl font-bold text-gray-900 tracking-wide underline decoration-blue-500/20 underline-offset-8">
+                Your kind support will be highly appreciated.
+              </p>
+            </div>
+            
+            <div className="mt-8 pt-8 border-t border-gray-900/5 flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center">
+                <span className="text-[10px] text-gray-400 uppercase font-black tracking-[0.4em] italic mb-1">With Warm Regards,</span>
+                <span className="text-2xl md:text-3xl font-black text-blue-950 tracking-tighter">Adv. P. Ramamoorthi</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Transition to Members List */}
-      <div className="flex flex-col items-center gap-2.5 animate-in fade-in duration-1000 delay-300">
-        <div className="flex items-center justify-center gap-2.5 text-gray-900">
-          <div className="w-8 h-8 rounded-full bg-yellow-50 flex items-center justify-center">
-            <Users className="w-5 h-5 text-yellow-600" />
-          </div>
-          <h3 className="text-xl md:text-2xl font-black tracking-tight uppercase">Members List</h3>
         </div>
       </div>
     </div>
