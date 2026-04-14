@@ -1,8 +1,12 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
+import { MessageSquare } from 'lucide-react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import MemberCard from './components/MemberCard';
 import Footer from './components/Footer';
+import ContactModal from './components/ContactModal';
+import Hero from './components/Hero';
+import WelcomeSplash from './components/WelcomeSplash';
 import { Member } from './types';
 
 export default function App() {
@@ -10,6 +14,13 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  const handleWelcomeComplete = () => {
+    setShowWelcome(false);
+    sessionStorage.setItem('welcome_shown', 'true');
+  };
 
   useEffect(() => {
     const cached = sessionStorage.getItem('members_cache');
@@ -58,12 +69,24 @@ export default function App() {
       <Header />
 
       <main className="flex-1">
+        <Hero />
+        
         <SearchBar
           value={query}
           onChange={handleQueryChange}
           resultCount={showResults ? results.length : null}
           loading={loading}
         />
+
+        <div className="flex justify-center -mt-2 mb-6">
+          <button
+            onClick={() => setIsContactModalOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-full text-xs font-bold border border-gray-200 hover:border-blue-300 hover:text-blue-600 shadow-sm transition-all active:scale-95 group"
+          >
+            <MessageSquare className="w-3.5 h-3.5 text-blue-500 group-hover:scale-110 transition-transform" />
+            <span>Contact for queries</span>
+          </button>
+        </div>
 
         {error && (
           <div className="max-w-4xl mx-auto px-4 pb-6">
@@ -114,6 +137,13 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
+
+      {showWelcome && <WelcomeSplash onComplete={handleWelcomeComplete} />}
     </div>
   );
 }

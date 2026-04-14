@@ -32,20 +32,12 @@ export default function MemberCard({ member, query }: MemberCardProps) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
       <div className="flex items-start gap-4 p-5">
-        {member.image ? (
-          <img
-            src={`./images/${member.image}`}
-            alt={safeName}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border border-gray-100 shadow-sm"
-          />
-        ) : (
-          <div
-            className="w-16 h-16 rounded-xl flex-shrink-0 flex items-center justify-center text-xl font-bold select-none"
-            style={{ backgroundColor: bg, color: text }}
-          >
-            {initials}
-          </div>
-        )}
+        <div
+          className="w-16 h-16 rounded-xl flex-shrink-0 flex items-center justify-center text-xl font-bold select-none"
+          style={{ backgroundColor: bg, color: text }}
+        >
+          {initials}
+        </div>
 
         <div className="flex-1 min-w-0">
           <h3 className="text-base font-semibold text-gray-900 leading-tight mb-1 truncate">
