@@ -3,9 +3,9 @@ import { Users, Zap } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className="max-w-4xl mx-auto px-4 pt-6 pb-2 text-center">
-      {/* Profile Image Placeholder */}
-      <div className="flex justify-center mb-4">
+    <div className="w-full pt-6 pb-2 text-center">
+      {/* Profile Image Placeholder - Stay centered */}
+      <div className="flex justify-center mb-4 px-4">
         <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl bg-white/40 backdrop-blur-sm border-2 border-white shadow-xl flex items-center justify-center p-1 relative">
           <div className="w-full h-full rounded-xl bg-white flex items-center justify-center overflow-hidden">
             <img src="/logo1.jpg" alt="MHAA Logo" className="w-full h-full object-contain" />
@@ -16,23 +16,65 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Name and Title */}
-      <div className="space-y-1 mb-4 animate-in fade-in slide-in-from-bottom-2 duration-700">
+      {/* Name and Title - Stay centered */}
+      <div className="space-y-1 mb-8 animate-in fade-in slide-in-from-bottom-2 duration-700 px-4">
         <h1 className="text-2xl md:text-4xl font-black text-yellow-500 tracking-tight drop-shadow-sm uppercase leading-tight">
-          RAMAMOORTHI
+          P. RAMAMOORTHI
         </h1>
         <h2 className="text-sm md:text-lg font-bold text-gray-800 tracking-wide">
-          Contestant for President
+          Contestant for Junior EC Member
         </h2>
       </div>
 
-      {/* Flash News Box */}
-      <div className="max-w-lg mx-auto mb-5 overflow-hidden rounded-xl bg-gradient-to-br from-white-600 to-white-700 shadow-xl p-px">
-        <div className="bg-white/5 backdrop-blur-md rounded-[11px] p-4 md:p-5 text-left relative overflow-hidden">
+      {/* Side-by-Side Layout Container - CONTROLLED HEIGHT */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-0 mb-12 px-4 lg:px-8">
+        
+        {/* Left Col: Campaign Poster - SLIGHTLY LARGER */}
+        <div className="lg:w-[35%] animate-in fade-in slide-in-from-left-8 duration-1000">
+          <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+            <img 
+              src="/poster.jpeg" 
+              alt="P. Ramamoorthi Campaign Poster" 
+              className="w-full h-auto max-h-[500px] block"
+            />
+          </div>
+        </div>
 
-          <p className="text-dark-grey text-xs md:text-base leading-relaxed font-medium">
-            ராமமூர்த்தி, சென்னை உயர்நீதிமன்றத்தின் தலைமை நீதிபதி மாண்புமிகு நீதியரசர் சஞ்சய் வி.கங்காபூர்வாலா அவர்களுக்கு வழங்கிய வரவேற்பு உரையின் போது முக்கிய கோரிக்கைகளை முன்வைத்தார். அதில்,
-          </p>
+        {/* Right Col: Message Box - ADJUSTED HEIGHT */}
+        <div className="lg:w-[65%] animate-in fade-in slide-in-from-right-8 duration-1000 bg-white rounded-2xl overflow-hidden shadow-2xl border-2 border-white ml-8 h-[500px]">
+          <div className="h-full relative overflow-y-auto custom-scrollbar">
+            <div className="p-6 md:p-8 text-left relative h-full flex flex-col items-start">
+              {/* Subtle accent line */}
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-yellow-500"></div>
+              
+              <div className="space-y-4 text-gray-700 text-xs md:text-sm leading-relaxed font-medium max-w-2xl px-2">
+                <p className="text-xl md:text-2xl font-black text-gray-900 mb-4 tracking-tight">Dear Advocate,</p>
+                
+                <p>
+                  Greetings from <strong className="text-blue-700">Adv. P. Ramamoorthi</strong> (Madras High Court).
+                </p>
+                
+                <p className="py-3 px-4 bg-gray-50 rounded-xl border-l-4 border-blue-600 my-4 text-gray-600 italic shadow-sm">
+                  Madras High Court Advocates Association Election on <strong className="text-gray-900">29th April 2026</strong>.
+                </p>
+                
+                <p>
+                  I humbly request your valuable support by extending your valuable vote to 
+                  <strong className="text-gray-900 border-b-2 border-yellow-400 pb-0.5 ml-1">P. Ramamoorthi</strong>, 
+                  contesting for <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg font-bold">Junior EC Member</span>.
+                </p>
+                
+                <p className="pt-4 font-bold text-gray-900 text-base md:text-lg">
+                  Your kind support will be highly appreciated.
+                </p>
+                
+                <div className="pt-8 border-t border-gray-100 flex flex-col gap-1 mt-6">
+                  <span className="text-[11px] text-gray-400 uppercase font-black tracking-[0.2em] italic">Regards,</span>
+                  <span className="text-xl font-black text-blue-900 tracking-tight">Adv. P. Ramamoorthi</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
