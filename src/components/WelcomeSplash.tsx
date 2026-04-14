@@ -57,7 +57,7 @@ export default function WelcomeSplash({ onComplete }: WelcomeSplashProps) {
         >
           <span className="text-white/60 font-semibold tracking-widest text-xs uppercase">by</span>
           <h2 className="text-3xl md:text-6xl font-black text-yellow-400 tracking-tighter drop-shadow-2xl uppercase">
-            Adv. P. Ramamoorthi
+            Advocate P. Ramamoorthi
           </h2>
         </div>
 

@@ -15,12 +15,12 @@ export default function Header({ query, onQueryChange, loading, onContactClick }
           {/* Left: Logo Only */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <img src="/logo1.jpg" alt="MHAA Logo" className="w-8 h-8 md:w-9 md:h-9 object-contain rounded-full shadow-sm" />
-            <span className="hidden lg:block text-[10px] font-black text-blue-600 tracking-widest uppercase opacity-40">MHAA</span>
+            <span className="hidden lg:block text-[10px] font-black text-blue-600 tracking-widest uppercase opacity-40">MHAA - P. Ramamoorthi</span>
           </div>
 
           {/* Right Most: [Text] [Search] [Contact] */}
           <div className="flex-1 flex items-center justify-end gap-2 md:gap-4">
-            
+
             {/* 1. All Member List Text */}
             <div className="flex-shrink-0 hidden md:flex items-center gap-2.5 px-3 py-1.5 bg-gray-50/50 rounded-xl border border-gray-100/50">
               <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center shadow-sm">
@@ -41,7 +41,7 @@ export default function Header({ query, onQueryChange, loading, onContactClick }
                 type="text"
                 value={query}
                 onChange={(e) => onQueryChange(e.target.value)}
-                placeholder="Find your enrolment number"
+                placeholder="Find Your Enrolment Number"
                 className="w-full pl-8 md:pl-9 pr-8 py-1.5 md:py-2 text-[10px] md:text-sm bg-gray-50 border border-transparent rounded-full focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all placeholder-gray-400 text-gray-800 font-medium"
                 autoComplete="off"
                 spellCheck={false}

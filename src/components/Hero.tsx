@@ -8,7 +8,12 @@ export default function Hero() {
       <div className="flex justify-center mb-4 px-4">
         <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl bg-white/40 backdrop-blur-sm border-2 border-white shadow-xl flex items-center justify-center p-1 relative">
           <div className="w-full h-full rounded-xl bg-white flex items-center justify-center overflow-hidden">
-            <img src="/logo1.jpg" alt="MHAA Logo" className="w-full h-full object-contain" />
+            <img
+              src="/profile_photo.jpeg"
+              alt="Advocate P. Ramamoorthi Profile"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 20%' }}
+            />
           </div>
           <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-yellow-400 rounded-lg flex items-center justify-center shadow-md border border-white">
             <Zap className="w-4 h-4 text-white fill-white" />
@@ -37,7 +42,7 @@ export default function Hero() {
         {/* Campaign Poster */}
         <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
           <img
-            src="/poster1.jpeg"
+            src="/pooter2.jpeg"
             alt="P. Ramamoorthi Campaign Poster"
             className="w-full h-auto block"
           />
@@ -61,7 +66,7 @@ export default function Hero() {
 
               <p className="bg-white/60 py-4 px-6 rounded-2xl border border-white shadow-sm inline-block">
                 For the MHAA Election on <strong className="text-blue-900 underline decoration-yellow-400 decoration-2 underline-offset-4">29th April 2026</strong>,
-                I humbly request your support for <strong className="text-gray-900">P. Ramamoorthi</strong>, contesting for:<br />
+                I humbly request your support for <strong className="text-gray-900">Advocate P. Ramamoorthi</strong>, contesting for:<br />
                 <span className="inline-block bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-md mt-3 whitespace-nowrap">
                   Junior EC Member
                 </span>

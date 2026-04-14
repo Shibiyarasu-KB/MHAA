@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex items-center gap-3 mb-4 select-none">
           <img src="/logo1.jpg" alt="MHAA Logo" className="w-10 h-10 object-contain rounded-full border border-gray-100" />
           <div className="text-left">
-            <span className="block text-gray-900 font-black text-sm uppercase leading-tight">Right to Serve By P.Ramamoorthi</span>
+            <span className="block text-gray-900 font-black text-sm uppercase leading-tight">Right to Serve By Advocate - P.Ramamoorthi</span>
 
           </div>
         </div>

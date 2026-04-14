@@ -74,14 +74,6 @@ export default function App() {
       <main className="flex-1">
         {!showResults && <Hero />}
         
-        {/* Results Info Section (Replaces SearchBar space) */}
-        {!showResults && !loading && members.length > 0 && (
-          <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col items-center justify-center text-center">
-            <p className="text-gray-500 text-xs font-semibold uppercase tracking-widest opacity-60">
-              MHAA Directory Search
-            </p>
-          </div>
-        )}
 
 
         {error && (
