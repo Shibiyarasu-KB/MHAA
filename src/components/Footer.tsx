@@ -19,7 +19,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-xs text-gray-400 mb-8 max-w-xs leading-relaxed">
-          © {new Date().getFullYear()} Madras High Court Advocates Association.<br />
+          © {new Date().getFullYear()} Advocate P. Ramamoorthi<br />
           All rights reserved.
         </p>
 
